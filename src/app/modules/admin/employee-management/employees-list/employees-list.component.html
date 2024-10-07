@@ -1,0 +1,132 @@
+<div class="bg-card flex min-w-0 flex-auto flex-col dark:bg-transparent sm:absolute sm:inset-0 sm:overflow-hidden">
+    <!-- Header -->
+    <div class="relative flex-0 flex-col px-6 py-8 md:px-8">
+        <!-- Loader -->
+        <!-- <div class="absolute inset-x-0 bottom-0">
+            <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
+        </div> -->
+
+        <!-- Title -->
+        <div class="text-4xl font-extrabold tracking-tight">
+            Employee List
+        </div>
+
+        <!-- Actions - Search & Add button in the next line -->
+        <div class="mt-4 flex flex-col items-start space-y-4 sm:flex-row sm:justify-start sm:space-y-0">
+            <!-- Search -->
+            <mat-form-field class="fuse-mat-dense fuse-mat-rounded min-w-64 sm:w-2/3 md:w-1/2 mr-20">
+                <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
+                <input matInput [autocomplete]="'off'" [placeholder]="'Search products'" />
+            </mat-form-field>
+
+            <!-- Add product button -->
+            <button class="ml-0 sm:ml-2" mat-flat-button [color]="'primary'">
+                <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
+                <span class="ml-2 mr-1">Add Employee</span>
+            </button>
+            <button class="ml-0 sm:ml-2 custom-border-button" mat-flat-button [color]="'secondary'">
+                <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
+                <span class="ml-2 mr-1">Assign Employee to Client</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="-mt-px flex-auto border-t pt-4 sm:pt-2">
+        <div class="mx-auto w-full max-w-screen-xl">
+            <!-- Tabs -->
+            <mat-tab-group class="sm:px-2" mat-stretch-tabs="false" [animationDuration]="'0'">
+                <!-- Active Tab -->
+                <mat-tab label="Active">
+                    <ng-template matTabContent>
+                       <!-- Main Card Section -->
+<div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 ">
+    <fuse-card class="filter-article flex flex-col md:flex-row">
+        <div class="w-full h-40 flex-0 md:w-64">
+            <img class="h-full w-full object-cover" src="images/cards/11-512x512.jpg"
+                alt="Card cover image" />
+        </div>
+        <div class="m-4 flex flex-auto flex-col">
+            <div class="text-xl font-semibold leading-tight">
+                Mountain tops and clear lakes
+            </div>
+            <div class="text-secondary mt-1 text-sm font-medium">
+                Updated with 20 new locations
+            </div>
+            <div class="mt-2 text-sm">
+                From rocky mountains to crystal clear lakes, 
+            </div>
+            <div class="mt-3">
+                <a class="px-3" mat-button [color]="'primary'" [routerLink]="['./']">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </fuse-card>
+
+    <fuse-card class="filter-article flex flex-col md:flex-row">
+        <div class="w-full h-40 flex-0 md:w-64">
+            <img class="h-full w-full object-cover" src="images/cards/11-512x512.jpg"
+                alt="Card cover image" />
+        </div>
+        <div class="m-4 flex flex-auto flex-col">
+            <div class="text-xl font-semibold leading-tight">
+                Mountain tops and clear lakes
+            </div>
+            <div class="text-secondary mt-1 text-sm font-medium">
+                Updated with 20 new locations
+            </div>
+            <div class="mt-2 text-sm">
+                From rocky mountains to crystal clear lakes,
+            </div>
+            <div class="mt-3">
+                <a class="px-3" mat-button [color]="'primary'" [routerLink]="['./']">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </fuse-card>
+
+    <fuse-card class="filter-article flex flex-col md:flex-row">
+        <div class="w-full h-40 flex-0 md:w-64">
+            <img class="h-full w-full object-cover" src="images/cards/11-512x512.jpg"
+                alt="Card cover image" />
+        </div>
+        <div class="m-4 flex flex-auto flex-col">
+            <div class="text-xl font-semibold leading-tight">
+                Mountain tops and clear lakes
+            </div>
+            <div class="text-secondary mt-1 text-sm font-medium">
+                Updated with 20 new locations
+            </div>
+            <div class="mt-2 text-sm">
+                From rocky mountains to crystal clear lakes,
+            </div>
+            <div class="mt-3">
+                <a class="px-3" mat-button [color]="'primary'" [routerLink]="['./']">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </fuse-card>
+</div>
+
+                    </ng-template>
+                </mat-tab>
+
+                <!-- In Active Tab -->
+                <mat-tab label="Inactive">
+                    <ng-template matTabContent>
+                        <div class="grid w-full min-w-0 grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
+                            <div class="bg-card flex flex-auto flex-col overflow-hidden rounded-2xl p-6 shadow">
+                            </div>
+                        </div>
+                    </ng-template>
+                </mat-tab>
+
+
+            </mat-tab-group>
+        </div>
+    </div>
+
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
+    FormControl,
     FormsModule,
     NgForm,
     ReactiveFormsModule,
@@ -13,10 +14,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSelectModule } from '@angular/material/select';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertComponent, FuseAlertType } from '@fuse/components/alert';
 import { AuthService } from 'app/core/auth/auth.service';
+import { Role } from './sign-in.types';
+
 
 @Component({
     selector: 'auth-sign-in',
@@ -35,6 +39,7 @@ import { AuthService } from 'app/core/auth/auth.service';
         MatIconModule,
         MatCheckboxModule,
         MatProgressSpinnerModule,
+        MatSelectModule
     ],
 })
 export class AuthSignInComponent implements OnInit {
@@ -46,6 +51,12 @@ export class AuthSignInComponent implements OnInit {
     };
     signInForm: UntypedFormGroup;
     showAlert: boolean = false;
+    disableSelect = new FormControl(false)
+    roles: Role[] = [
+        {value: 'admin', viewValue: 'Login as Admin'},
+        {value: 'client', viewValue: 'Login as Client'},
+        {value: 'employee', viewValue: 'Login as Employee'},
+      ];
 
     /**
      * Constructor
@@ -84,6 +95,7 @@ export class AuthSignInComponent implements OnInit {
      * Sign in
      */
     signIn(): void {
+        console.log(this.signInForm.value)
         // Return if the form is invalid
         if (this.signInForm.invalid) {
             return;
